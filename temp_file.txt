@@ -1,1 +1,1 @@
-Commit: Added basic components
+Commit: Integrated Sanity CMS
