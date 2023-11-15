@@ -1,1 +1,1 @@
-Commit: Integrated Sanity CMS
+Commit: Styled navbar
