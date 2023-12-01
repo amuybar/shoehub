@@ -1,1 +1,1 @@
-Commit: Styled navbar
+Commit: Created Home page
