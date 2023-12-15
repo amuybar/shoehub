@@ -145,3 +145,4 @@ Initial project setup
 Added basic components
 Integrated Sanity CMS
 Styled navbar
+Created Home page
