@@ -148,3 +148,4 @@ Styled navbar
 Created Home page
 Added Men section
 Added Women section
+Added Kids section
