@@ -149,3 +149,4 @@ Created Home page
 Added Men section
 Added Women section
 Added Kids section
+Implemented Cart functionality
