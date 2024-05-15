@@ -150,3 +150,4 @@ Added Men section
 Added Women section
 Added Kids section
 Implemented Cart functionality
+Added Google API integration
