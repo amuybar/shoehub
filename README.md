@@ -151,3 +151,4 @@ Added Women section
 Added Kids section
 Implemented Cart functionality
 Added Google API integration
+Integrated Sonner for notifications
