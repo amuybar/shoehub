@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.filters h2 {
+  font-size: 1.5em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filters select,
+.filters input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.collection h2 {
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+.shoeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.shoeItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shoeItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.shoeItem a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.shoeImage {
+  width: 200px;
+  height: 200px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.shoeItem h3 {
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.shoeItem p {
+  font-size: 1em;
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filters label {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}

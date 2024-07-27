@@ -1,0 +1,45 @@
+
+.section {
+  max-width:1200px;
+  margin:0 auto;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.viewMoreButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.viewMoreButton:hover {
+  background-color: #005bb5;
+}
+
+.viewMoreButton:focus {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 1.25rem;
+  }
+
+  .productContainer {
+    gap: 8px;
+  }
+}

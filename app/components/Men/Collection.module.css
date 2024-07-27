@@ -1,0 +1,174 @@
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.collection {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.collection h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.shoeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Styles for each shoe item */
+.shoeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.shoeItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shoeImage {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Loading overlay styles */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .collection h2 {
+    font-size: 1.8em;
+  }
+
+  .shoeItem {
+    padding: 10px;
+  }
+
+  .shoeImage {
+    max-height: 180px;
+  }
+
+  .collection h3 {
+    font-size: 1.4em;
+  }
+
+  .collection p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 992px) {
+  .shoeList {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .collection h2 {
+    font-size: 1.6em;
+  }
+
+  .shoeItem {
+    padding: 8px;
+  }
+
+  .shoeImage {
+    max-height: 160px;
+  }
+
+  .collection h3 {
+    font-size: 1.3em;
+  }
+
+  .collection p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .shoeList {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .collection h2 {
+    font-size: 1.4em;
+  }
+
+  .shoeItem {
+    padding: 5px;
+  }
+
+  .shoeImage {
+    max-height: 140px;
+  }
+
+  .collection h3 {
+    font-size: 1.2em;
+  }
+
+  .collection p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .shoeList {
+    grid-template-columns: 1fr;
+  }
+
+  .collection h2 {
+    font-size: 1.2em;
+  }
+
+  .shoeItem {
+    padding: 5px;
+  }
+
+  .shoeImage {
+    max-height: 120px;
+  }
+
+  .collection h3 {
+    font-size: 1.1em;
+  }
+
+  .collection p {
+    font-size: 0.8em;
+  }
+}

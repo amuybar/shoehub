@@ -1,0 +1,175 @@
+.cartContainer {
+  width: 90%;
+  max-width: 1200px;
+  height:100%;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Glass-like effect */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.cartItemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.cartItemDetails {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantityContainer label {
+  margin-right: 10px;
+}
+
+.quantityInput {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-left: 5px;
+}
+
+.removeButton {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.removeButton:hover {
+  background: #cc0000;
+}
+
+.cartItemDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartTotal {
+  margin-top: 20px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cartActions {
+  margin-top: 15px;
+}
+
+.checkoutButton {
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.checkoutButton:hover {
+  background: #005bb5;
+}
+
+
+
+.emptyCart {
+  text-align: center;
+}
+
+.casualShoesContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.casualShoeItem {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 250px;
+}
+
+.casualShoeImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
+.cartItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cartItemImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cartItemDetails {
+  flex: 1;
+}
+
+.cartTotal {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cartItem button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cartItem button:hover {
+  background-color: #cc0000;
+}

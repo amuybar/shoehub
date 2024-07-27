@@ -1,0 +1,49 @@
+.previewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.previewCard {
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.previewImage {
+  width: 100%;
+  height: 60%;
+  background-color: #ccc;
+}
+
+.previewText {
+  padding: 0.5rem;
+}
+
+.previewTitle,
+.previewPrice,
+.previewDescription {
+  background-color: #ddd;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.previewTitle {
+  width: 70%;
+}
+
+.previewPrice {
+  width: 50%;
+}
+
+.previewDescription {
+  width: 90%;
+}

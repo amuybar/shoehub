@@ -1,0 +1,105 @@
+
+.container {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* About Section Styles */
+.aboutHeading {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.aboutParagraph {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* FAQ Section Styles */
+.faqHeading {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.faqQuestion {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.faqAnswer {
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+/* Contact Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.formInput,
+.formTextarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formButton {
+  padding: 10px 15px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formButton:hover {
+  background-color: #0056b3;
+}
+
+/* Google Maps Styles */
+.mapSection {
+  margin-bottom: 40px;
+}
+
+.mapHeading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .section {
+    padding: 10px;
+  }
+
+  .aboutHeading,
+  .faqHeading {
+    font-size: 1.5em;
+  }
+
+  .aboutParagraph,
+  .faqAnswer {
+    font-size: 1em;
+  }
+
+  .formButton {
+    font-size: 1em;
+  }
+}

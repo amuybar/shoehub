@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ececec;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.links.open {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.links li {
+  cursor: pointer;
+}
+
+.links a {
+  color: #000;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 19px;
+  transition: color 0.3s ease;
+  font-family: "Aref Ruqaa Ink", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.links a:hover {
+  color: #c5fc00;
+}
+
+.active a {
+  color: #0070f3;
+}
+
+.lastdivs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.cartCount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 768px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    height: 100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 4rem 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease-in-out;
+  }
+
+  .links.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .links li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition-delay: calc(0.1s * var(--item-index));
+  }
+
+  .links.open li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menuIcon {
+    display: block;
+  }
+
+  .lastdivs {
+    display: none;
+  }
+}
