@@ -61,9 +61,9 @@ const Contact: React.FC = () => {
       <section className={styles.section}>
         <h1 className={styles.aboutHeading}>About Us</h1>
         <p className={styles.aboutParagraph}>
-          Welcome to Shoehub, your number one source for all things shoes. We're
-          dedicated to giving you the very best of shoes, with a focus on
-          dependability, customer service, and uniqueness.
+          Welcome to Shoehub, your number one source for all things shoes.
+          We&#39;re dedicated to giving you the very best of shoes, with a focus
+          on dependability, customer service, and uniqueness.
         </p>
       </section>
 

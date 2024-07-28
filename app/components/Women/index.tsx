@@ -53,7 +53,7 @@ const Men: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.collection}>
-        <h2>Women's Collection</h2>
+        <h2>Women&#39;s Collection</h2>
         {loading ? (
           <Preview />
         ) : (

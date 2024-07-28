@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
-import { renderCategorySection } from "./Render";
+import { RenderCategorySection } from "./Render";
 import Hero from "./Hero";
 import { contact } from "./Contact";
 import { newsletter } from "./Newsletter";
@@ -52,16 +52,16 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Hero />
-      {renderCategorySection("Running", 4, shoes.running, loading, "Running")}
-      {renderCategorySection(
+      {RenderCategorySection("Running", 4, shoes.running, loading, "Running")}
+      {RenderCategorySection(
         "Football",
         3,
         shoes.football,
         loading,
         "Football"
       )}
-      {renderCategorySection("Casual", 6, shoes.casual, loading, "Casual")}
-      {renderCategorySection("Formal", 4, shoes.formal, loading, "Formal")}
+      {RenderCategorySection("Casual", 6, shoes.casual, loading, "Casual")}
+      {RenderCategorySection("Formal", 4, shoes.formal, loading, "Formal")}
       {contact()}
       {newsletter()}
     </div>

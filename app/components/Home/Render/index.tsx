@@ -7,7 +7,7 @@ interface RenderProductsProps {
   products: CartItem[];
 }
 
-export function renderCategorySection(
+export function RenderCategorySection(
   title: string,
   num: number,
   products: CartItem[],
