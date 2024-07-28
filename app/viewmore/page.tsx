@@ -41,7 +41,7 @@ const ViewMore: React.FC<{ shoes: CartItem[]; category: string }> = ({
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { query: { category: string; }; }) {
   const category = context.query.category || "";
   let shoes: CartItem[] = [];
 
