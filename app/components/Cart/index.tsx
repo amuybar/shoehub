@@ -11,6 +11,7 @@ import {
   calculateTotal,
   clearCart,
 } from "../../util/cartUtils"; 
+import Link from "next/link";
 
 interface Shoe {
   id: string;
@@ -168,12 +169,13 @@ const Cart: React.FC = () => {
                 {/* Use calculateTotal */}
               </h2>
               <div className={styles.cartActions}>
-                <button
+                  <Link
+                    href='/checkout'
                   onClick={handleCheckout}
                   className={styles.checkoutButton}
                 >
                   <FaCreditCard /> Checkout
-                </button>
+                </Link>
               </div>
             </div>
           </div>

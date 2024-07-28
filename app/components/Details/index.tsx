@@ -3,8 +3,9 @@
 import React from "react";
 import { urlFor } from "@/lib/urlFor";
 import styles from "../../details/[slug]/ShoeDetail.module.css";
-import { FaCartPlus, FaArrowLeft } from "react-icons/fa";
+import { FaCartPlus, FaArrowLeft, FaDollarSign } from "react-icons/fa";
 import { toast } from "sonner";
+import Link from "next/link";
 
 interface Review {
   user: string;
@@ -66,20 +67,34 @@ const ShoeDetail: React.FC<ShoeDetailProps> = ({ shoe, relatedShoes }) => {
         <img src={imageUrl} alt={shoe.title} className={styles.shoeImage} />
         <div className={styles.info}>
           <h1>{shoe.title}</h1>
-          <p className={styles.price}>Price: ${shoe.price}</p>
-          <p>Category: {shoe.category}</p>
-          <p>Stock: {shoe.items_left > 0 ? "In Stock" : "Out of Stock"}</p>
-          <p>Gender: {shoe.gender}</p>
-          <p>Description: {shoe.description}</p>
+          <div className={styles.infotext}>
+            <div className={styles.lcart}>
+              <p className={styles.price}>Price: ${shoe.price}</p>
+              <p>Category: {shoe.category}</p>
+            </div>
+            <div className={styles.rcart}>
+              <p>Stock: {shoe.items_left > 0 ? "In Stock" : "Out of Stock"}</p>
+              <p>Gender: {shoe.gender}</p>
+              <p>Description: {shoe.description}</p>
+            </div>
+          </div>
           <div className={styles.rating}>
             <span>Rating: {shoe.rating ? shoe.rating : "No rating"} / 5</span>
           </div>
-          <button
-            onClick={() => handleAddToCart(shoe)}
-            className={styles.cartButton}
-          >
-            <FaCartPlus /> Add to Cart
-          </button>
+          <div className={styles.btns}>
+            <button
+              onClick={() => handleAddToCart(shoe)}
+              className={styles.cartButton}
+            >
+              <FaCartPlus /> Add to Cart
+            </button>
+            <Link
+            href='/checkout'
+              className={styles.checkoutButton}
+            >
+              <FaDollarSign /> Checkout
+            </Link>
+          </div>
         </div>
       </div>
 
