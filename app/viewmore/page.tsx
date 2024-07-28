@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import styles from "./ViewMore.module.css";
 import { CartItem } from "../types";
 import { useSearchParams } from "next/navigation";
@@ -51,24 +51,26 @@ const ViewMore: React.FC = () => {
     <div className={styles.container}>
       <Navbar selectedLink={selectedLink} setSelectedItem={setSelectedItem} />
 
-      {selectedLink !== "/" ? (
-        <HeroSection selectedItem={selectedLink} />
-      ) : (
-        <div>
-          <h1>{category ? `${category} Shoes` : "All Shoes"}</h1>
-          {loading ? (
-            <LoadingSpinner />
-          ) : shoes.length > 0 ? (
-            renderProducts({
-              products: shoes,
-              num: shoes.length,
-              loading: false,
-            })
-          ) : (
-            <p>No shoes found.</p>
-          )}
-        </div>
-      )}
+      <Suspense fallback={<LoadingSpinner />}>
+        {selectedLink !== "/" ? (
+          <HeroSection selectedItem={selectedLink} />
+        ) : (
+          <div>
+            <h1>{category ? `${category} Shoes` : "All Shoes"}</h1>
+            {loading ? (
+              <LoadingSpinner />
+            ) : shoes.length > 0 ? (
+              renderProducts({
+                products: shoes,
+                num: shoes.length,
+                loading: false,
+              })
+            ) : (
+              <p>No shoes found.</p>
+            )}
+          </div>
+        )}
+      </Suspense>
     </div>
   );
 };
