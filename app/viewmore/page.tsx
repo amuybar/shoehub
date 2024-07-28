@@ -1,9 +1,6 @@
-"use client";
-
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState } from "react";
 import styles from "./ViewMore.module.css";
 import { CartItem } from "../types";
-import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import LoadingSpinner from "../components/LoadingSpinner";
 import renderProducts from "../components/Home/Product";
@@ -11,68 +8,59 @@ import Navbar from "../components/nav";
 
 const HeroSection = dynamic(() => import("../components/Hero"), { ssr: false });
 
-const ViewMore: React.FC = () => {
-  const [shoes, setShoes] = useState<CartItem[]>([]);
-  const [loading, setLoading] = useState(true);
+const ViewMore: React.FC<{ shoes: CartItem[]; category: string }> = ({
+  shoes,
+  category,
+}) => {
+  const [loading, setLoading] = useState(false);
   const [selectedLink, setSelectedItem] = useState<string>("/");
-  const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "";
-
-  useEffect(() => {
-    // Fetch shoes based on the category
-    const fetchShoes = async () => {
-      try {
-        setLoading(true); // Ensure loading is set to true before fetching
-        const response = await fetch(`/api/shoes?category=${category}`); // Adjust endpoint
-        if (!response.ok) {
-          throw new Error("Failed to fetch shoes data");
-        }
-        const data = await response.json();
-        setShoes(data.shoes);
-      } catch (error) {
-        console.error("Error fetching shoes:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchShoes();
-  }, [category]);
-
-  useEffect(() => {
-    // This effect handles the change in selected link
-    if (selectedLink !== "/" && !category) {
-      // If a link is selected and no category is set, show HeroSection
-      // You may also want to handle specific logic based on the selectedLink here
-    }
-  }, [selectedLink, category]);
 
   return (
     <div className={styles.container}>
       <Navbar selectedLink={selectedLink} setSelectedItem={setSelectedItem} />
 
-      <Suspense fallback={<LoadingSpinner />}>
-        {selectedLink !== "/" ? (
-          <HeroSection selectedItem={selectedLink} />
-        ) : (
-          <div>
-            <h1>{category ? `${category} Shoes` : "All Shoes"}</h1>
-            {loading ? (
-              <LoadingSpinner />
-            ) : shoes.length > 0 ? (
-              renderProducts({
-                products: shoes,
-                num: shoes.length,
-                loading: false,
-              })
-            ) : (
-              <p>No shoes found.</p>
-            )}
-          </div>
-        )}
-      </Suspense>
+      {selectedLink !== "/" ? (
+        <HeroSection selectedItem={selectedLink} />
+      ) : (
+        <div>
+          <h1>{category ? `${category} Shoes` : "All Shoes"}</h1>
+          {loading ? (
+            <LoadingSpinner />
+          ) : shoes.length > 0 ? (
+            renderProducts({
+              products: shoes,
+              num: shoes.length,
+              loading: false,
+            })
+          ) : (
+            <p>No shoes found.</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const category = context.query.category || "";
+  let shoes: CartItem[] = [];
+
+  try {
+    const response = await fetch(
+      `https://api.example.com/shoes?category=${category}`
+    );
+    const data = await response.json();
+    shoes = data.shoes || [];
+  } catch (error) {
+    console.error("Error fetching shoes:", error);
+  }
+
+  return {
+    props: {
+      shoes,
+      category,
+    },
+  };
+}
 
 export default ViewMore;
