@@ -4,10 +4,12 @@ import React, { useState, useEffect } from "react";
 import styles from "./ViewMore.module.css";
 import { CartItem } from "../types";
 import { useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import LoadingSpinner from "../components/LoadingSpinner";
 import renderProducts from "../components/Home/Product";
 import Navbar from "../components/nav";
-import HeroSection from "../components/Hero";
+
+const HeroSection = dynamic(() => import("../components/Hero"), { ssr: false });
 
 const ViewMore: React.FC = () => {
   const [shoes, setShoes] = useState<CartItem[]>([]);
@@ -20,7 +22,11 @@ const ViewMore: React.FC = () => {
     // Fetch shoes based on the category
     const fetchShoes = async () => {
       try {
+        setLoading(true); // Ensure loading is set to true before fetching
         const response = await fetch(`/api/shoes?category=${category}`); // Adjust endpoint
+        if (!response.ok) {
+          throw new Error("Failed to fetch shoes data");
+        }
         const data = await response.json();
         setShoes(data.shoes);
       } catch (error) {
